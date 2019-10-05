@@ -23,11 +23,14 @@ activity1.save()
 activity2.save()
 activity3.save()
 
-booking1 = Booking.new({"member_id" => member1.id, "activity_id" => activity1.id})
+booking1 = Booking.new({"member_id" => member1.id, "activity_id" => activity3.id})
 booking2 = Booking.new({"member_id" => member2.id, "activity_id" => activity2.id})
+booking3 = Booking.new({"member_id" => member2.id, "activity_id" => activity3.id})
+
 
 booking1.save()
 booking2.save()
+booking3.save()
 
 binding.pry
 nil

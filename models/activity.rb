@@ -54,6 +54,16 @@ class Activity
     SqlRunner.run(sql, values)
   end
 
+  def members()
+    sql = "SELECT members.* FROM members
+    INNER JOIN bookings
+    ON members.id = bookings.member_id
+    WHERE bookings.activity_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Member.map_members(result)
+  end
+
   def self.all()
     sql = "SELECT * FROM activities"
     result = SqlRunner.run(sql)
