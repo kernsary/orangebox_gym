@@ -61,7 +61,7 @@ class Member
   end
 
   def self.delete_all()
-    sql = "DELETE FROM MEMBERS"
+    sql = "DELETE FROM members"
     SqlRunner.run(sql)
   end
 
