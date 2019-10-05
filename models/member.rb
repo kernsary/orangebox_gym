@@ -2,14 +2,25 @@ require_relative("../db/sql_runner")
 
 class Member
 
-  attr_reader :id
-  attr_accessor :first_name, :last_name, :date_of_birth
+  attr_reader :id, :first_name, :last_name, :date_of_birth
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
     @first_name = options["first_name"]
     @last_name = options["last_name"]
     @date_of_birth = options["date_of_birth"]
+  end
+
+  def set_first_name(new_first_name)
+    @first_name = new_first_name
+  end
+
+  def set_last_name(new_last_name)
+    @last_name = new_last_name
+  end
+
+  def set_date_of_birth(new_date_of_birth)
+    @date_of_birth = new_date_of_birth
   end
 
   def save()
