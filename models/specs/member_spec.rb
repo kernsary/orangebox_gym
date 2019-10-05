@@ -5,8 +5,8 @@ require_relative("../member.rb")
 class MemberTest < MiniTest::Test
 
   def setup()
-    @member1 = Member.new({"first_name" => "John", "last_name" => "Smith", "date_of_birth" => "5/10/1995"})
-    @member2 = Member.new({"first_name" => "Sarah", "last_name" => "Docherty", "date_of_birth" => "4/9/1994"})
+    @member1 = Member.new({"first_name" => "John", "last_name" => "Smith", "address" => "4 New Road, Muckletoun MT1 1AA"})
+
   end
 
   def test_set_first_name()
@@ -19,9 +19,9 @@ class MemberTest < MiniTest::Test
     assert_equal("Brown", @member1.last_name())
   end
 
-  def test_set_date_of_birth()
-    @member1.set_date_of_birth("15/10/1995")
-    assert_equal("15/10/1995", @member1.date_of_birth())
+  def test_set_address()
+    @member1.set_address("99 South Street, Muckletoun MT5 9JJ")
+    assert_equal("99 South Street, Muckletoun MT5 9JJ", @member1.address())
   end
 
 end
