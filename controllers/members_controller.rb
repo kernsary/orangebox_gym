@@ -9,3 +9,8 @@ end
 get "/gym/members/new" do
   erb(:"members/new")
 end
+
+post "/gym/members" do
+  Member.new(params).save()
+  redirect to "gym/members"
+end
