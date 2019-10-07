@@ -14,3 +14,9 @@ post "/gym/activities" do
   Activity.new(params).save()
   redirect to "/gym/activities"
 end
+
+get "/gym/activities/:id" do
+  @activity = Activity.find(params["id"])
+  # @participants = @activity.members()
+  erb(:"activities/show")
+end

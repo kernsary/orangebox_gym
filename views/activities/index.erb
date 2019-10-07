@@ -7,6 +7,8 @@
     <td><%= activity.day %></td>
     <td></td>
     <td><%= activity.start_time %>-<%= activity.end_time %></td>
+    <td></td>
+    <td><a href="/gym/activities/<%= activity.id %>">View details</a></td>
   </tr>
   <% end %>
 </table>
