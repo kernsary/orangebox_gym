@@ -17,6 +17,16 @@ end
 
 get "/gym/activities/:id" do
   @activity = Activity.find(params["id"])
-  # @participants = @activity.members()
   erb(:"activities/show")
+end
+
+get "/gym/activities/:id/edit" do
+  @activity = Activity.find(params["id"])
+  erb(:"activities/edit")
+end
+
+post "/gym/activities/:id" do
+  activity = Activity.new(params)
+  activity.update()
+  redirect to "/gym/activities/#{params[:id]}"
 end
