@@ -2,3 +2,12 @@
 <p>First name: <%= @member.first_name() %></p>
 <p>Last name: <%= @member.last_name() %></p>
 <p>Address: <%= @member.address() %></p>
+
+<a href="/gym/members/<%= @member.id %>/edit">Edit details</a>
+<br>
+<br>
+
+<form class="" action="/gym/members/<%= @member.id() %>/delete" method="post">
+  <input type="submit" value="Delete member">
+
+</form>

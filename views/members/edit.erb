@@ -1,0 +1,15 @@
+<h1>Edit member details</h1>
+<form class="" action="/gym/members/<%= @member.id() %>" method="post">
+
+  <label for="first-name">First name:</label>
+  <input type="text" name="first_name" value="<%= @member.first_name() %>" id="first-name">
+
+  <label for="last-name">Last name:</label>
+  <input type="text" name="last_name" value="<%= @member.last_name() %>" id="last-name">
+
+  <label for="address">Address:</label>
+  <input type="text" name="address" value="<%= @member.address() %>" id="address">
+
+  <input type="submit" value="Update details">
+
+</form>
