@@ -1,5 +1,6 @@
 require_relative("../db/sql_runner")
 require_relative("member")
+require_relative("booking")
 
 class Activity
 
@@ -62,6 +63,16 @@ class Activity
     values = [@id]
     result = SqlRunner.run(sql, values)
     return Member.map_members(result)
+  end
+
+  def add_participant(participant_id)
+    new_booking = Booking.new({"member_id" => participant_id, "activity_id" => @id})
+    new_booking.save()
+  end
+
+  def remove_participant(participant_id)
+    booking = Booking.find_by_member(participant_id)
+    booking.delete()
   end
 
   def self.all()

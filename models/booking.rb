@@ -57,6 +57,14 @@ class Booking
     return Booking.new(result)
   end
 
+  def self.find_by_member(member_id)
+    sql = "SELECT * FROM bookings
+    WHERE member_id = $1"
+    values = [member_id]
+    result = SqlRunner.run(sql, values)[0]
+    return Booking.new(result)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM bookings"
     SqlRunner.run(sql)
