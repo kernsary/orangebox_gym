@@ -28,5 +28,11 @@ end
 post "/gym/activities/:id" do
   activity = Activity.new(params)
   activity.update()
-  redirect to "/gym/activities/#{params[:id]}"
+  redirect to "/gym/activities/#{params["id"]}"
+end
+
+post "/gym/activities/:id/delete" do
+  activity = Activity.find(params["id"])
+  activity.delete()
+  redirect to "/gym/activities"
 end
