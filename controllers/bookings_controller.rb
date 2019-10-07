@@ -18,3 +18,23 @@ post "/gym/bookings" do
   Booking.new(params).save()
   redirect to "/gym/bookings"
 end
+
+get "/gym/bookings/:id" do
+  @booking = Booking.find(params[:id])
+  erb(:"bookings/show")
+end
+
+get "/gym/bookings/:id/edit" do
+  @booking = Booking.find(params[:id])
+  @members = Member.all()
+  @activities = Activity.all()
+  @member = @booking.member
+  @activity = @booking.activity
+  erb(:"bookings/edit")
+end
+
+post "/gym/bookings/:id" do
+  booking = Booking.new(params)
+  booking.update()
+  redirect to "/gym/bookings/#{params["id"]}"
+end

@@ -1,0 +1,4 @@
+<h1>Booking details</h1>
+<p><%= @booking.member.first_name %> <%= @booking.member.last_name %>, <%= @booking.member.address %></p>
+<p><%= @booking.activity.name %>, <%= @booking.activity.day %>, <%= @booking.activity.start_time %>-<%= @booking.activity.end_time %></p>
+<a href="/gym/bookings/<%= @booking.id %>/edit">Edit booking details</a>
