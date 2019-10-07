@@ -1,0 +1,12 @@
+<h1>Activities</h1>
+<table>
+  <% for activity in @activities %>
+  <tr>
+    <td><%= activity.name %></td>
+    <td></td>
+    <td><%= activity.day %></td>
+    <td></td>
+    <td><%= activity.start_time %>-<%= activity.end_time %></td>
+  </tr>
+  <% end %>
+</table>
