@@ -1,4 +1,6 @@
 require_relative("../db/sql_runner")
+require_relative("member")
+require_relative("activity")
 
 class Booking
 
@@ -25,6 +27,14 @@ class Booking
     RETURNING id"
     values = [@member_id, @activity_id]
     @id = SqlRunner.run(sql, values)[0]["id"].to_i()
+  end
+
+  def member()
+    return Member.find(@member_id)
+  end
+
+  def activity()
+    return Activity.find(@activity_id)
   end
 
   def update()

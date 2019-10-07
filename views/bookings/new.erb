@@ -1,9 +1,24 @@
-<h1>Add a participant</h1>
-
-<p>Activity: <%=  %></p>
+<h1>Add a new booking</h1>
 
 <form class="" action="/gym/bookings" method="post">
 
-  <label for=""></label>
+  <label for="member-select">Select a member:</label>
+  <input list="members" name="member_id" id="member-select">
+  <datalist id="members">
+    <% for member in @members %>
+    <option value="<%= member.first_name %> <%= member.last_name %>, <%= member.address %>">
+      <% end %>
+  </datalist>
+
+  <label for="activity-select">Select an activity:</label>
+  <input list="activities" name="activity_id" id="activity-select">
+  <datalist id="activities">
+    <% for activity in @activities %>
+    <option value="<%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %>">
+      <% end %>
+  </datalist>
+
+  <input type="submit" value="Add booking">
+
 
 </form>
