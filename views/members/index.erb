@@ -1,5 +1,8 @@
 <h1>Members</h1>
 <% for member in @members %>
 <p><%= member.first_name %> <%= member.last_name %>, <%= member.address %></p>
+<a href="/gym/members/<%= member.id() %>">View details</a>
+<hr>
 <% end %>
+<br>
 <a href="/gym/members/new">Add a new member</a>

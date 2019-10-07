@@ -14,3 +14,8 @@ post "/gym/members" do
   Member.new(params).save()
   redirect to "gym/members"
 end
+
+get "/gym/members/:id" do
+@member = Member.find(params["id"])
+  erb(:"members/show")
+end
