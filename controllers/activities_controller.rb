@@ -41,5 +41,16 @@ end
 post "/gym/activities/:id/:booking_id/booking_delete" do
   booking = Booking.find(params["booking_id"])
   booking.delete()
-  redirect to "gym/activities/#{params["id"]}"
+  redirect to "/gym/activities/#{params["id"]}"
+end
+
+get "/gym/activities/:id/booking_new" do
+  @activity = Activity.find(params["id"])
+  @members = Member.all()
+  erb(:"activities/booking_new")
+end
+
+post "/gym/activities/:activity_id/booking" do
+  Booking.new(params).save()
+  redirect to "/gym/activities/#{params["activity_id"]}"
 end
