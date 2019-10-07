@@ -13,3 +13,8 @@ get "/gym/bookings/new" do
   @activities = Activity.all()
   erb(:"bookings/new")
 end
+
+post "/gym/bookings" do
+  Booking.new(params).save()
+  redirect to "/gym/bookings"
+end
