@@ -1,4 +1,5 @@
 require_relative("../models/activity")
+require_relative("../models/booking")
 also_reload("../models/*")
 
 get "/gym/activities" do
@@ -35,4 +36,10 @@ post "/gym/activities/:id/delete" do
   activity = Activity.find(params["id"])
   activity.delete()
   redirect to "/gym/activities"
+end
+
+post "/gym/activities/:id/:booking_id/booking_delete" do
+  booking = Booking.find(params["booking_id"])
+  booking.delete()
+  redirect to "gym/activities/#{params["id"]}"
 end

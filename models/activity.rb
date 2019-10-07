@@ -65,6 +65,14 @@ class Activity
     return Member.map_members(result)
   end
 
+  def bookings()
+    sql = "SELECT * FROM bookings
+    WHERE activity_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Booking.map_bookings(result)
+  end
+
   def add_participant(participant_id)
     new_booking = Booking.new({"member_id" => participant_id, "activity_id" => @id})
     new_booking.save()
