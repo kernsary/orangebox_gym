@@ -1,0 +1,23 @@
+.btn {
+  border: 0em none;
+  border-radius: 3%;
+  padding: 0.5em;
+  color: White;
+  background-color: Maroon;
+  width: auto;
+  font-size: 1em;
+}
+
+.btn-small {
+  border: 0em none;
+  border-radius: 5%;
+  padding: 0em 0.5em 0em 0.5em;
+  color: White;
+  background-color: Orange;
+  width: auto;
+  font-size: 0.8em;
+}
+
+.btn--delete {
+  background-color: Orange;
+}

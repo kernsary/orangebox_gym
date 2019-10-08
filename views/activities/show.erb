@@ -4,26 +4,39 @@
 <p>Start time: <%= @activity.start_time() %></p>
 <p>End time: <%= @activity.end_time() %></p>
 
-<a href="/gym/activities/<%= @activity.id() %>/edit">Edit details</a>
+<a class="btn" href="/gym/activities/<%= @activity.id() %>/edit">Edit details</a>
 <br>
 <br>
 
 <form class="" action="/gym/activities/<%= @activity.id() %>/delete" method="post">
-  <input type="submit" value="Delete activity">
+  <input class="btn btn--delete" type="submit" value="Delete activity">
 </form>
 
 <br>
 <h2>Participants</h2>
+
 <% if @activity.bookings == [] %>
+
   <p>No participants for this activity</p>
+
 <% else %>
+
+  <table>
   <% @activity.bookings.each do |booking| %>
-  <p><%= booking.member.first_name() %> <%= booking.member.last_name() %>, <%= booking.member.address() %></p>
-  <form class="" action="/gym/activities/<%= booking.id %>/booking_delete" method="post">
-  <input type="submit" value="Remove participant">
- </form>
-<hr>
+    <tr>
+      <td>
+        <%= booking.member.first_name() %> <%= booking.member.last_name() %>, <%= booking.member.address() %>
+      </td>
+      <td>
+        <form action="/gym/activities/<%= booking.id %>/booking_delete" method="post">
+          <input class="btn-small" type="submit" value="Remove participant">
+        </form>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+
 <% end %>
-<% end %>
+
 <br>
-<a href="/gym/activities/<%= @activity.id %>/booking_new">Add participant</a>
+<a class="btn" href="/gym/activities/<%= @activity.id %>/booking_new">Add participant</a>

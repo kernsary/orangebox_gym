@@ -2,10 +2,10 @@
 <p><%= @member.first_name %> <%= @member.last_name %>, <%= @member.address %></p>
 <p><%= @activity.name %>, <%= @activity.day %>, <%= @activity.start_time %>-<%= @activity.end_time %></p>
 
-<a href="/gym/bookings/<%= @booking.id %>/edit">Edit booking details</a>
+<a class="btn" href="/gym/bookings/<%= @booking.id %>/edit">Edit booking details</a>
 <br>
 <br>
 
 <form class="" action="/gym/bookings/<%= @booking.id %>/delete" method="post">
-<input type="submit" value="Delete booking">
+<input class="btn btn--delete" type="submit" value="Delete booking">
 </form>

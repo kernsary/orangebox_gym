@@ -3,11 +3,11 @@
 <p>Last name: <%= @member.last_name() %></p>
 <p>Address: <%= @member.address() %></p>
 
-<a href="/gym/members/<%= @member.id %>/edit">Edit details</a>
+<a class="btn" href="/gym/members/<%= @member.id %>/edit">Edit details</a>
 <br>
 <br>
 
 <form class="" action="/gym/members/<%= @member.id() %>/delete" method="post">
-  <input type="submit" value="Delete member">
+  <input class="btn btn--delete" type="submit" value="Delete member">
 
 </form>

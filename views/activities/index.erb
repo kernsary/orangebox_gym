@@ -3,14 +3,11 @@
   <% for activity in @activities %>
   <tr>
     <td><%= activity.name %></td>
-    <!-- <td></td> -->
     <td><%= activity.day %></td>
-    <!-- <td></td> -->
     <td><%= activity.start_time %>-<%= activity.end_time %></td>
-    <!-- <td></td> -->
-    <td><a href="/gym/activities/<%= activity.id %>">View details</a></td>
+    <td><a class="btn-small" href="/gym/activities/<%= activity.id %>">View details</a></td>
   </tr>
   <% end %>
 </table>
 <br>
-<a href="/gym/activities/new">Add a new activity</a>
+<a class="btn" href="/gym/activities/new">Add a new activity</a>
