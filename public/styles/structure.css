@@ -21,17 +21,17 @@ h2 {
 }
 
 nav {
+  align-items: center;
   background-color: Maroon;
-  height: 4em;
+  height: 8em;
   margin-right: -1em;
   margin-left: -1em;
 }
 
 nav p {
-  display: inline;
   margin-right: 4em;
   margin-left: 1em;
-  line-height: 3.5em;
+  align-items: center;
   font-size: 1.2em;
 }
 
@@ -44,14 +44,16 @@ a {
 }
 
 .homelink {
-  font-family: "Special Elite", cursive;
   font-weight: bold;
   font-size: 2.5em;
-  line-height: 1em;
 }
 
 .flex {
   display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
 }
 
 .flex--column {
