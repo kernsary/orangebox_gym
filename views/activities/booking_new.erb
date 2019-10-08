@@ -5,13 +5,15 @@
 
 <form class="" action="/gym/activities/<%= @activity.id %>/booking" method="post">
 
+<div class="form-el">
   <label for="member-select">Select a member:</label>
   <select class="" name="member_id" id="member-select">
     <% for member in @members %>
       <option value=<%= member.id %>><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
     <% end %>
   </select>
+  </div>
 
-  <input type="submit" value="Add participant">
+  <input class="btn" type="submit" value="Add participant">
 
 </form>
