@@ -19,7 +19,7 @@
 <% else %>
   <% @activity.bookings.each do |booking| %>
   <p><%= booking.member.first_name() %> <%= booking.member.last_name() %>, <%= booking.member.address() %></p>
-  <form class="" action="/gym/activities/<%= @activity.id %>/<%= booking.id %>/booking_delete" method="post">
+  <form class="" action="/gym/activities/<%= booking.id %>/booking_delete" method="post">
   <input type="submit" value="Remove participant">
  </form>
 <hr>

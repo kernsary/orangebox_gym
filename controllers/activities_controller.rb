@@ -38,10 +38,11 @@ post "/gym/activities/:id/delete" do
   redirect to "/gym/activities"
 end
 
-post "/gym/activities/:id/:booking_id/booking_delete" do
+post "/gym/activities/:booking_id/booking_delete" do
   booking = Booking.find(params["booking_id"])
+  activity_id = booking.activity_id()
   booking.delete()
-  redirect to "/gym/activities/#{params["id"]}"
+  redirect to "/gym/activities/#{activity_id}"
 end
 
 get "/gym/activities/:id/booking_new" do
