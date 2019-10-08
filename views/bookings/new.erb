@@ -2,21 +2,27 @@
 
 <form class="" action="/gym/bookings" method="post">
 
-  <label for="member-select">Select a member:</label>
-  <select class="" name="member_id" id="member-select">
-    <% for member in @members %>
+  <div class="form-el">
+    <label for="member-select">Select a member:</label>
+    <select class="" name="member_id" id="member-select">
+      <% for member in @members %>
       <option value=<%= member.id %>><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
-    <% end %>
-  </select>
-
- <label for="activity-select">Select an activity:</label>
-  <select name="activity_id" id="activity-select">
-      <% for activity in @activities %>
-        <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
       <% end %>
-  </select>
+    </select>
+  </div>
 
-  <input type="submit" value="Add booking">
+  <div class="form-el">
+    <label for="activity-select">Select an activity:</label>
+    <select name="activity_id" id="activity-select">
+      <% for activity in @activities %>
+      <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-el">
+    <input type="submit" value="Add booking">
+  </div>
 
 
 </form>

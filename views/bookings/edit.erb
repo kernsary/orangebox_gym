@@ -2,28 +2,34 @@
 
 <form class="" action="/gym/bookings/<%= @booking.id() %>" method="post">
 
-  <label for="member-select">Select a member:</label>
-  <select class="" name="member_id" id="member-select">
-    <% for member in @members %>
+  <div class="form-el">
+    <label for="member-select">Select a member:</label>
+    <select class="" name="member_id" id="member-select">
+      <% for member in @members %>
       <% if member.id == @member.id%>
-        <option value=<%= member.id %> selected><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
+      <option value=<%= member.id %> selected><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
       <% else %>
-         <option value=<%= member.id %>><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
+      <option value=<%= member.id %>><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
       <% end %>
-    <% end %>
-  </select>
+      <% end %>
+    </select>
+  </div>
 
-  <label for="activity-select">Select an activity:</label>
-  <select name="activity_id" id="activity-select">
-    <% for activity in @activities %>
+  <div class="form-el">
+    <label for="activity-select">Select an activity:</label>
+    <select name="activity_id" id="activity-select">
+      <% for activity in @activities %>
       <% if activity.id == @activity.id%>
-        <option value=<%= activity.id %> selected><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
+      <option value=<%= activity.id %> selected><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
       <% else %>
-        <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
+      <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
       <% end %>
-    <% end %>
-  </select>
+      <% end %>
+    </select>
+  </div>
 
-  <input type="submit" value="Update booking">
+  <div class="form-el">
+    <input type="submit" value="Update booking">
+  </div>
 
 </form>

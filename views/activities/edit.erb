@@ -1,27 +1,37 @@
 <h1>Edit activity details</h1>
 <form class="" action="/gym/activities/<%= @activity.id() %>" method="post">
 
-  <label for="name">Name:</label>
-  <input type="text" name="name" value="<%= @activity.name() %>"" id="name">
+  <div class="form-el">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= @activity.name() %>"" id="name">
+  </div>
 
-  <label for="day-select">Select day:</label>
-  <select class="" name="day" id="day-select">
-    <% days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
-    <% days.each do |day| %>
+  <div class="form-el">
+    <label for="day-select">Select day:</label>
+    <select class="" name="day" id="day-select">
+      <% days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+      <% days.each do |day| %>
       <% if day == @activity.day%>
-        <option value=<%= day %> selected><%= day %></option>
+      <option value=<%= day %> selected><%= day %></option>
       <% else %>
-        <option value=<%= day %>><%= day %></option>
+      <option value=<%= day %>><%= day %></option>
       <% end %>
-    <% end %>
-  </select>
+      <% end %>
+    </select>
+  </div>
 
-  <label for="start-time">Start time:</label>
-  <input type="text" name="start_time" value="<%=@activity.start_time() %>" id="start-time">
+  <div class="form-el">
+    <label for="start-time">Start time:</label>
+    <input class="short" type="text" name="start_time" value="<%=@activity.start_time() %>" id="start-time">
+  </div>
 
-  <label for="end-time">End time:</label>
-  <input type="text" name="end_time" value="<%= @activity.end_time() %>" id="end-time">
+  <div class="form-el">
+    <label for="end-time">End time:</label>
+    <input class="short" type="text" name="end_time" value="<%= @activity.end_time() %>" id="end-time">
+  </div>
 
-  <input type="submit" value="Update details">
+  <div class="form-el">
+    <input type="submit" value="Update details">
+  </div>
 
 </form>
