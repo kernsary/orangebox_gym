@@ -20,6 +20,36 @@ h2 {
   margin-bottom: 0.5em;
 }
 
+nav {
+  background-color: Maroon;
+  height: 4em;
+  margin-right: -1em;
+  margin-left: -1em;
+}
+
+nav p {
+  display: inline;
+  margin-right: 4em;
+  margin-left: 1em;
+  line-height: 3.5em;
+  font-size: 1.2em;
+}
+
+nav p a {
+  color: White;
+}
+
+a {
+  text-decoration: none;
+}
+
+.homelink {
+  font-family: "Special Elite", cursive;
+  font-weight: bold;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
 .flex {
   display: flex;
 }
