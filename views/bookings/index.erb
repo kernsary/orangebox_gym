@@ -2,7 +2,7 @@
 <% @bookings.each do |booking| %>
 <p><%= booking.member.first_name %> <%= booking.member.last_name %>, <%= booking.member.address %></p>
 <p><%= booking.activity.name %>, <%= booking.activity.day %>, <%= booking.activity.start_time %>-<%= booking.activity.end_time %></p>
-<a class="btn" href="/gym/bookings/<%= booking.id() %>">View details</a>
+<a class="btn-small" href="/gym/bookings/<%= booking.id() %>">View details</a>
 <br>
 <br>
 <% end %>
