@@ -1,0 +1,29 @@
+body {
+  font-family: Helvetica, sans-serif;
+  padding: 0em;
+  margin: 0em;
+}
+
+main {
+  padding: 3em;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-bottom: 0.8em;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--column {
+  flex-direction: column;
+}
