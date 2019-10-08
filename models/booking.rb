@@ -56,7 +56,8 @@ class Booking
   def self.all()
     sql = "SELECT * FROM bookings"
     result = SqlRunner.run(sql)
-    return self.map_bookings(result)
+    unsorted_bookings = self.map_bookings(result)
+    return unsorted_bookings.sort_by{|booking| booking.activity.name()}
   end
 
   def self.find(id)

@@ -84,7 +84,8 @@ class Activity
   end
 
   def self.all()
-    sql = "SELECT * FROM activities"
+    sql = "SELECT * FROM activities
+    ORDER BY name, day, start_time"
     result = SqlRunner.run(sql)
     return self.map_activities(result)
   end
