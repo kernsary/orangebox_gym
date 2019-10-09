@@ -1,4 +1,5 @@
 <h1>Member details</h1>
+
 <p>First name: <%= @member.first_name() %></p>
 <p>Last name: <%= @member.last_name() %></p>
 <p>Address: <%= @member.address() %></p>
@@ -8,6 +9,7 @@
 <br>
 
 <form class="" action="/gym/members/<%= @member.id() %>/delete" method="post">
+
   <input class="btn btn--alt" type="submit" value="Delete member">
 
 </form>
@@ -23,16 +25,16 @@
 
   <table>
   <% @member.bookings.each do |booking| %>
-  <tr>
-    <td><%= booking.activity.name %></td>
-    <td><%= booking.activity.day %></td>
-    <td><%= booking.activity.start_time %>-<%= booking.activity.end_time %></td>
-    <td>
-      <form action="/gym/members/<%= booking.id %>/booking_delete" method="post">
-        <input class="btn-small" type="submit" value="Remove booking">
-      </form>
-    </td>
-  </tr>
+    <tr>
+      <td><%= booking.activity.name %></td>
+      <td><%= booking.activity.day %></td>
+      <td><%= booking.activity.start_time %>-<%= booking.activity.end_time %></td>
+      <td>
+        <form action="/gym/members/<%= booking.id %>/booking_delete" method="post">
+          <input class="btn-small" type="submit" value="Remove booking">
+        </form>
+      </td>
+    </tr>
   <% end %>
   </table>
 

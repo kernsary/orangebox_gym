@@ -6,7 +6,7 @@
     <label for="member-select">Select a member:</label>
     <select class="" name="member_id" id="member-select">
       <% for member in @members %>
-      <option value=<%= member.id %>><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
+        <option value=<%= member.id %>><%= member.first_name %> <%= member.last_name %>, <%= member.address %></option>
       <% end %>
     </select>
   </div>
@@ -15,7 +15,7 @@
     <label for="activity-select">Select an activity:</label>
     <select name="activity_id" id="activity-select">
       <% for activity in @activities %>
-      <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
+        <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
       <% end %>
     </select>
   </div>
