@@ -31,6 +31,11 @@
     <input class="short" type="text" name="end_time" value="<%= @activity.end_time() %>" id="end-time">
   </div>
 
+  <div class="form-el">
+    <label for="capacity">Capacity:</label>
+    <input class="short" type="number" name="capacity" value="<%= @activity.capacity() %>" id="capacity">
+  </div>
+
     <input class="btn" type="submit" value="Update details">
 
 </form>

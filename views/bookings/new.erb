@@ -1,5 +1,7 @@
 <h1>Add a new booking</h1>
 
+<p>Only activities with spaces available are shown.</p>
+
 <form class="" action="/gym/bookings" method="post">
 
   <div class="form-el">
@@ -15,7 +17,9 @@
     <label for="activity-select">Select an activity:</label>
     <select name="activity_id" id="activity-select">
       <% for activity in @activities %>
-        <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
+        <% if !activity.full? %>
+          <option value=<%= activity.id %>><%= activity.name %>, <%= activity.day %>, <%= activity.start_time %>-<%= activity.end_time %></option>
+        <% end %>
       <% end %>
     </select>
   </div>

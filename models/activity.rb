@@ -4,7 +4,7 @@ require_relative("booking")
 
 class Activity
 
-  attr_reader :id, :name, :day, :start_time, :end_time
+  attr_reader :id, :name, :day, :start_time, :end_time, :capacity
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -12,6 +12,7 @@ class Activity
     @day = options["day"]
     @start_time = options["start_time"]
     @end_time = options["end_time"]
+    @capacity = options["capacity"].to_i()
   end
 
   def set_name(new_name)
@@ -30,21 +31,25 @@ class Activity
     @end_time = new_end_time
   end
 
+  def set_capacity(new_capacity)
+    @capacity = new_capacity
+  end
+
   def save()
     sql = "INSERT INTO activities
-    (name, day, start_time, end_time)
-    VALUES ($1, $2, $3, $4)
+    (name, day, start_time, end_time, capacity)
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING id"
-    values = [@name, @day, @start_time, @end_time]
+    values = [@name, @day, @start_time, @end_time, @capacity]
     @id = SqlRunner.run(sql, values)[0]["id"].to_i()
   end
 
   def update()
     sql = "UPDATE activities
-    SET (name, day, start_time, end_time)
-    = ($1, $2, $3, $4)
-    WHERE id = $5"
-    values = [@name, @day, @start_time, @end_time, @id]
+    SET (name, day, start_time, end_time, capacity)
+    = ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@name, @day, @start_time, @end_time, @capacity, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -81,6 +86,10 @@ class Activity
   def remove_participant(participant_id)
     booking = Booking.find_by_member(participant_id)
     booking.delete()
+  end
+
+  def full?
+    return bookings.count >= @capacity
   end
 
   def self.all()

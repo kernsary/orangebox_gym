@@ -6,7 +6,11 @@
       <td><%= activity.name %></td>
       <td><%= activity.day %></td>
       <td><%= activity.start_time %>-<%= activity.end_time %></td>
+      <td>Capacity: <%= activity.capacity %></td>
       <td><a class="btn-small" href="/gym/activities/<%= activity.id %>">View details</a></td>
+      <% if activity.full? %>
+        <td class="message">FULL</td>
+      <% end %>
     </tr>
   <% end %>
 </table>

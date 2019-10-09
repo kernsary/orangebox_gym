@@ -41,6 +41,23 @@ nav p a {
   color: White;
 }
 
+/* nav ul li {
+  display: inline;
+  margin-right: 4em;
+  margin-left: 1em;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+nav ul li a {
+  color: White;
+}
+
+ul {
+  list-style-type: none;
+} */
+
+
 a {
   text-decoration: none;
 }
@@ -50,6 +67,10 @@ a {
   font-weight: bold;
   font-size: 1.5em;
   background-color: Orange;
+}
+
+.message {
+  color: Maroon;
 }
 
 .flex {

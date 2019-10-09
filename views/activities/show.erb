@@ -1,9 +1,15 @@
 <h1>Activity details</h1>
 
+<% if @activity.full? %>
+  <h2 class="message">This activity is FULL</h2>
+<% end %>
+
 <p>Name: <%= @activity.name() %></p>
 <p>Day: <%= @activity.day() %></p>
 <p>Start time: <%= @activity.start_time() %></p>
 <p>End time: <%= @activity.end_time() %></p>
+<p>Capacity: <%= @activity.capacity() %></p>
+<br>
 
 <a class="btn" href="/gym/activities/<%= @activity.id() %>/edit">Edit details</a>
 <br>
@@ -39,5 +45,7 @@
 
 <% end %>
 
-<br>
-<a class="btn" href="/gym/activities/<%= @activity.id %>/booking_new">Add participant</a>
+<% if !@activity.full? %>
+ <br>
+ <a class="btn" href="/gym/activities/<%= @activity.id %>/booking_new">Add participant</a>
+<% end %>

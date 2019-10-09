@@ -14,7 +14,8 @@ CREATE TABLE activities(
   name VARCHAR(255),
   day VARCHAR(255),
   start_time VARCHAR(255),
-  end_time VARCHAR(255)
+  end_time VARCHAR(255),
+  capacity INT8
 );
 
 CREATE TABLE bookings(
