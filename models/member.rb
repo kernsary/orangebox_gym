@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require_relative("booking")
 
 class Member
 
@@ -38,6 +39,14 @@ class Member
     WHERE id = $4"
     values = [@first_name, @last_name, @address, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def bookings()
+    sql = "SELECT * FROM bookings
+    WHERE member_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Booking.map_bookings(result)
   end
 
   def delete()

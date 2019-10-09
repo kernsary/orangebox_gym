@@ -7,7 +7,7 @@ Booking.delete_all
 Member.delete_all
 Activity.delete_all
 
-member1 = Member.new({"first_name" => "John", "last_name" => "Smith", "address" => "4 New Road, Muckletoun MT1 1AA"})
+member1 = Member.new({"first_name" => "Sara", "last_name" => "Ibrahim", "address" => "4 New Road, Muckletoun MT1 1AA"})
 member2 = Member.new({"first_name" => "Sarah", "last_name" => "Docherty", "address" => "10 Low Road, Muckletoun MT2 3HH"})
 member3 = Member.new({"first_name" => "Jo", "last_name" => "Wilson", "address" => "25 High Road, Muckletoun MT3 4BB"})
 member4 = Member.new({"first_name" => "Alan", "last_name" => "McKay", "address" => "39 Kirk Brae, Muckletoun MT6 4AJ"})

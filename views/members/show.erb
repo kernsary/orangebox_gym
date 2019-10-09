@@ -11,3 +11,32 @@
   <input class="btn btn--alt" type="submit" value="Delete member">
 
 </form>
+
+<br>
+<h2>Activities booked</h2>
+
+<% if @member.bookings == [] %>
+
+  <p>This member has no activities booked.</p>
+
+<% else %>
+
+  <table>
+  <% @member.bookings.each do |booking| %>
+  <tr>
+    <td><%= booking.activity.name %></td>
+    <td><%= booking.activity.day %></td>
+    <td><%= booking.activity.start_time %>-<%= booking.activity.end_time %></td>
+    <td>
+      <form action="/gym/members/<%= booking.id %>/booking_delete" method="post">
+        <input class="btn-small" type="submit" value="Remove booking">
+      </form>
+    </td>
+  </tr>
+  <% end %>
+  </table>
+
+<% end %>
+
+<br>
+<a class="btn" href="/gym/members/<%= @member.id %>/booking_new">Book new activity</a>
