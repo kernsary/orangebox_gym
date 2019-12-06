@@ -1,4 +1,4 @@
-# solo_project_gym
+# orangebox_gym
 
 This is a web app to handle members, activities and bookings for a gym.
 
