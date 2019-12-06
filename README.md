@@ -17,7 +17,7 @@ The server will run and will say what port is being used ('has taken the stage o
 
 Open a new browser window and type in 'localhost:', the port number and '/gym' (eg 'localhost:4567/gym'), and the home page of the app will display.
 
-The app meets the MVP of the brief below plus the first of the 'Possible Extensions', and has additional functionality including the ability to add or remove new members for each activity, and vice versa.
+The app meets the MVP of the brief below plus the first of the 'Possible Extensions', and has additional functionality including the ability to add or remove new members for each activity, and vice versa. It was created as a solo project at CodeClan.
 
 ## Brief
 
