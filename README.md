@@ -6,7 +6,7 @@ It uses PSQL, Ruby, the Ruby package for PSQL 'pg', the Ruby debugging package '
 
 To run the programme, carry out the following steps in the Terminal:
 
-* Navigate to the 'gym' directory
+* Navigate to the 'orangebox_gym' directory
 * Create a new database called 'gym' using 'dropdb gym' followed by 'createdb gym'
 * Run the SQL file using 'psql -d gym -f db/gym.sql'
 * Run the seed data using 'ruby db/seeds.rb'
